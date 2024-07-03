@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8a2be2;
+}
+.check-box{
+    width: 270px;
+    height: 80px;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.check-box input{
+    width: 90px;
+    height: 40px;
+    background: #ddd;
+    -webkit-appearance: none;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+}
+input:checked{
+    background: #8a2be2;
+}
+.check-box input::before{
+    content: '';
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+input:checked::before{
+    left: 50px;
+}
+.check-box .text::before{
+    content: 'Disabled';
+    font-size: 26px;
+    color: #bfbfbf;
+    font-weight: 600;
+}
+input:checked ~ .text::before{
+    content: 'Enabled';
+    color: #8a2be2;
+}
